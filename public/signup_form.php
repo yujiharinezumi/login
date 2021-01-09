@@ -18,11 +18,11 @@
         </p>
         <p>
             <label for="password">パスワード:</label>
-            <input type="password" name="username">
+            <input type="password" name="password">
         </p>
         <p>
             <label for="password_conf">パスワード確認:</label>
-            <input type="password" name="username_conf">
+            <input type="password" name="password_conf">
         </p>
         <p>
             <input type="submit" value="新規登録">
