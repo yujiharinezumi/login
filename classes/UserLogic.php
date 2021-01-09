@@ -20,7 +20,7 @@ public static function createUser($userData){
     $arr[] =  $userData['username'];
     $arr[] = $userData['email'];
     $arr[] = password_hash($userData['password'],
-                                    PASSWORD_DEFAULT);
+    PASSWORD_DEFAULT);
 
 
     try{

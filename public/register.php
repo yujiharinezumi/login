@@ -44,8 +44,8 @@ if(count($err) === 0){
     <?php endforeach ?>
     <?php else : ?>
     <p>ユーザー登録が完了しました。</p>
-    <a href="./signup_form.php">戻る</a>
     <?php endif ?>
+    <a href="./signup_form.php">戻る</a>
     
 </body>
 </html>
