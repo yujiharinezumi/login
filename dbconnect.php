@@ -1,6 +1,6 @@
 <?php
 
-require_once './env.php';
+require_once 'env.php';
 ini_set('display_errors', true);
 function connect() {
     $host  = DB_HOST;
@@ -15,7 +15,7 @@ function connect() {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
         // var_dump($pdo);
-        echo '接続成功';
+        return $pdo;
         
     }catch(PDOException $e){
         echo '接続失敗' . $e->getMessage();
@@ -24,7 +24,6 @@ function connect() {
     }
 }
 
-echo connect();
 
 
 

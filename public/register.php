@@ -1,5 +1,7 @@
 <?php
 
+require_once '../classes/UserLogic.php';
+
 $err =[];
 
 if(!$username = filter_input(INPUT_POST,'username')){
@@ -11,7 +13,7 @@ if(!$email = filter_input(INPUT_POST,'email')){
 }
 
 $password = filter_input(INPUT_POST,'password');
-if(!preg_match("/\A[a-z\d]{8,100}+\z/i",$password)){
+if(preg_match("/\A[a-z\d]{8,100}+\z/i",$password)){
     $err[] = 'パスワードは英数字8文字以上100文字以下にしてください';
 }
 
@@ -21,7 +23,10 @@ if($password !==  $password_conf ){
 }
 
 if(count($err) === 0){
-
+    $hasCreated = UserLogic::createUser($_POST);
+    if(!$hasCreated){
+        $err[] = '登録に失敗しました';
+    }
 }
 ?>
 
